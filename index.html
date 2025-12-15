@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>창욱 ♥ 은 결혼식을 마치며</title>
+    <title>축의대 전문 서비스 | THANK U</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cream: #FAF7F2;
-            --warm-beige: #E8E0D5;
-            --soft-gold: #C9A96E;
-            --deep-brown: #5C4A3D;
-            --text-dark: #3D3229;
-            --text-light: #7A6B5E;
+            --bg-color: #FAFAFA;
+            --text-dark: #2C2C2C;
+            --text-light: #888888;
+            --accent: #B8A07E;
+            --accent-hover: #A08968;
         }
 
         * {
@@ -23,213 +22,403 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Noto Serif KR', serif;
-            background-color: var(--cream);
-            color: var(--text-dark);
-            line-height: 1.8;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 60px 24px;
-            text-align: center;
-        }
-
-        /* 상단 장식 */
-        .top-ornament {
-            color: var(--soft-gold);
-            font-size: 24px;
-            letter-spacing: 12px;
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-        }
-
-        /* 메인 타이틀 */
-        .main-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 14px;
-            font-weight: 400;
-            letter-spacing: 6px;
-            color: var(--text-light);
-            text-transform: uppercase;
-            margin-bottom: 24px;
-            opacity: 0;
-            animation: fadeIn 1s ease 0.2s forwards;
-        }
-
-        /* 이름 */
-        .names {
-            font-family: 'Noto Serif KR', serif;
-            font-size: 32px;
-            font-weight: 500;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-            opacity: 0;
-            animation: fadeIn 1s ease 0.4s forwards;
-        }
-
-        .names .ampersand {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: var(--soft-gold);
-            margin: 0 12px;
-            font-weight: 400;
-        }
-
-        /* 날짜 */
-        .date {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
-            color: var(--text-light);
-            letter-spacing: 3px;
-            margin-bottom: 50px;
-            opacity: 0;
-            animation: fadeIn 1s ease 0.6s forwards;
-        }
-
-        /* 구분선 */
-        .divider {
-            width: 60px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--soft-gold), transparent);
-            margin: 0 auto 50px;
-            opacity: 0;
-            animation: fadeIn 1s ease 0.8s forwards;
-        }
-
-        /* 감사 메시지 */
-        .message {
-            font-size: 15px;
-            font-weight: 300;
+            background-color: var(--bg-color);
             color: var(--text-dark);
             line-height: 2.2;
-            margin-bottom: 50px;
-            opacity: 0;
-            animation: fadeIn 1s ease 1s forwards;
+            font-weight: 300;
         }
 
-        .message p {
-            margin-bottom: 24px;
-        }
-
-        .message p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* 하단 서명 */
-        .signature {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 16px;
-            font-style: italic;
-            color: var(--text-light);
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeIn 1s ease 1.2s forwards;
-        }
-
-        /* 하단 장식 */
-        .bottom-ornament {
-            color: var(--soft-gold);
-            font-size: 20px;
-            letter-spacing: 8px;
-            opacity: 0;
-            animation: fadeIn 1s ease 1.4s forwards;
-        }
-
-        /* 이미지 섹션 (선택사항) */
-        .photo-placeholder {
+        /* 히어로 섹션 */
+        .hero {
             width: 100%;
-            max-width: 400px;
-            height: 280px;
-            margin: 0 auto 50px;
-            background: var(--warm-beige);
-            border-radius: 4px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #F5F3F0 0%, #FAFAFA 100%);
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            color: var(--text-light);
-            font-size: 13px;
-            opacity: 0;
-            animation: fadeIn 1s ease 0.8s forwards;
+            align-items: center;
+            text-align: center;
+            padding: 60px 24px;
+            position: relative;
         }
 
-        /* 애니메이션 */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+        .hero-badge {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: var(--accent);
+            margin-bottom: 30px;
+            padding: 8px 20px;
+            border: 1px solid var(--accent);
+            border-radius: 30px;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 14px;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            font-size: 12px;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        /* 스토리 섹션 */
+        .story-section {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        .story-section p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-dark);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .story-section p:nth-child(1) { animation-delay: 0.1s; }
+        .story-section p:nth-child(2) { animation-delay: 0.2s; }
+        .story-section p:nth-child(3) { animation-delay: 0.3s; }
+        .story-section p:nth-child(4) { animation-delay: 0.4s; }
+        .story-section p:nth-child(5) { animation-delay: 0.5s; }
+        .story-section p:nth-child(6) { animation-delay: 0.6s; }
+        .story-section p:nth-child(7) { animation-delay: 0.7s; }
+        .story-section p:nth-child(8) { animation-delay: 0.8s; }
+        .story-section p:nth-child(9) { animation-delay: 0.9s; }
+        .story-section p:nth-child(10) { animation-delay: 1.0s; }
+        .story-section p:nth-child(11) { animation-delay: 1.1s; }
+
+        @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
+        .highlight {
+            color: var(--accent);
+            font-weight: 400;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--accent);
+            margin: 60px auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.75s forwards;
+        }
+
+        /* 슬로건 섹션 */
+        .slogan-section {
+            background: #F5F3F0;
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .slogan {
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .brand-name {
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 6px;
+        }
+
+        /* 서비스 특징 */
+        .features-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: var(--text-light);
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* CTA 섹션 */
+        .cta-section {
+            background: var(--text-dark);
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .cta-text {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+        }
+
+        /* 푸터 */
+        .footer {
+            padding: 60px 24px;
+            text-align: center;
+            background: #F5F3F0;
+        }
+
+        .footer-brand {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+        }
+
+        .footer-sns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .footer-sns a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--text-light);
+            border-radius: 50%;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-sns a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .footer-info {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 2;
+        }
+
+        .footer-info p {
+            margin-bottom: 4px;
+        }
+
+        .footer-copyright {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #BBBBBB;
+            letter-spacing: 1px;
+        }
+
         /* 반응형 */
-        @media (max-width: 480px) {
-            .container {
-                padding: 40px 20px;
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 22px;
             }
 
-            .names {
+            .story-section p {
+                font-size: 15px;
+            }
+
+            .slogan {
+                font-size: 18px;
+            }
+
+            .brand-name {
                 font-size: 26px;
-            }
-
-            .message {
-                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="top-ornament">✦ ✦ ✦</div>
-        
-        <p class="main-title">Thank You</p>
-        
-        <h1 class="names">
-            창욱<span class="ampersand">&</span>은
-        </h1>
-        
-        <p class="date">2025. 11. 29</p>
-        
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="hero-badge">축의대 전문 서비스</div>
+        <h1 class="hero-title">소중한 분들과 함께하는<br>당신의 결혼식</h1>
+        <p class="hero-subtitle">축의대, 이제 전문가에게 맡기세요</p>
+        <div class="scroll-indicator">↓ SCROLL</div>
+    </section>
+
+    <!-- 스토리 섹션 -->
+    <section class="story-section">
+        <p>
+            결혼을 준비하기 전엔 몰랐습니다.
+        </p>
+        <p>
+            결혼식에 이렇게 많은 손이 필요하다는 것을,<br>
+            그리고 축의대가 이토록 큰 고민이 될 줄은..
+        </p>
+        <p>
+            직접 준비를 해보니<br>
+            다른 건 어떻게든 해결할 수 있었지만,<br>
+            <span class="highlight">축의대만큼은 쉽게 결정할 수 없었습니다.</span>
+        </p>
+        <p>
+            큰 돈이 오고 가는 자리인 만큼<br>
+            가장 믿을 수 있는 사람에게 맡기고 싶었습니다.
+        </p>
+        <p>
+            하지만 그런 사람은 대부분<br>
+            가족이거나, 가장 소중한 친구였습니다.
+        </p>
+        <p>
+            내 인생에 단 한 번뿐인 결혼식,<br>
+            가장 소중한 사람이 함께하지 못한다는 게<br>
+            마음에 걸렸습니다.
+        </p>
+        <p>
+            사진을 찍을 때도, 잠시 자리를 비울 때도<br>
+            마음 편히 움직일 수 없다는 걸 알게 된 후<br>
+            차마 부탁하기가 어려워졌습니다.
+        </p>
+
         <div class="divider"></div>
-        
-        <!-- 사진을 넣고 싶으시면 아래 주석을 해제하고 이미지를 추가하세요 -->
-        <!-- 
-        <div class="photo-placeholder">
-            <img src="your-photo.jpg" alt="웨딩 사진" style="width:100%; height:100%; object-fit:cover; border-radius:4px;">
+
+        <p>
+            그래서 저희가 시작했습니다.
+        </p>
+        <p>
+            같은 고민을 하는 예비 신랑·신부가<br>
+            더 이상 이런 불편함을 겪지 않도록,<br>
+            <span class="highlight">오랜 경험과 신뢰를 바탕으로</span><br>
+            축의대 전문 서비스를 제공합니다.
+        </p>
+    </section>
+
+    <!-- 슬로건 섹션 -->
+    <section class="slogan-section">
+        <p class="slogan">당신의 소중한 시작을 함께합니다.</p>
+        <p class="brand-name">THANK U</p>
+    </section>
+
+    <!-- 서비스 특징 -->
+    <section class="features-section">
+        <p class="features-title">WHY THANK U?</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🤝</div>
+                <h3 class="feature-title">신뢰할 수 있는 전문가</h3>
+                <p class="feature-desc">검증된 매니저가<br>책임지고 관리합니다</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                <h3 class="feature-title">소중한 분들과 함께</h3>
+                <p class="feature-desc">가족과 친구들이<br>온전히 축하에 집중할 수 있도록</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✨</div>
+                <h3 class="feature-title">깔끔한 정산</h3>
+                <p class="feature-desc">투명하고 정확한<br>축의금 관리</p>
+            </div>
         </div>
-        -->
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="cta-section">
+        <p class="cta-text">편안한 결혼식의 시작, 지금 상담하세요</p>
+        <a href="#" class="cta-button">상담 문의하기</a>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p class="footer-brand">THANK U</p>
         
-        <div class="message">
-            <p>
-                저희 두 사람의 새로운 시작을<br>
-                함께 축복해 주신 모든 분들께<br>
-                진심으로 감사드립니다.
-            </p>
-            <p>
-                바쁘신 와중에도 귀한 걸음 해주시고<br>
-                따뜻한 마음으로 축하해 주셔서<br>
-                더욱 뜻깊은 하루가 되었습니다.
-            </p>
-            <p>
-                보내주신 사랑과 축복을 마음에 새기며<br>
-                서로 아끼고 사랑하며<br>
-                행복하게 살겠습니다.
-            </p>
-            <p>
-                감사합니다.
-            </p>
+        <div class="footer-sns">
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="KakaoTalk">💬</a>
+            <a href="#" title="YouTube">▶</a>
         </div>
-        
-        <p class="signature">With love and gratitude</p>
-        
-        <div class="bottom-ornament">♥</div>
-    </div>
+
+        <div class="footer-info">
+            <p>사업자등록번호 : 000-00-00000</p>
+            <p>Tel. 010-0000-0000 | email@example.com</p>
+            <p>주소 : 서울특별시 OO구 OO로 000</p>
+        </div>
+
+        <p class="footer-copyright">Copyright ⓒ 2025 THANK U All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
